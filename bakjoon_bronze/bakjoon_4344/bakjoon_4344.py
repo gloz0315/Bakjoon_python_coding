@@ -17,3 +17,18 @@ for i in range(C):
     print(f"{total:.3f}%")
     count,sum,avg,total = 0,0,0,0
     lst = []
+    
+# 보다 더 효율적으로 짧게 짠 코드 (아래)
+
+C = int(input())
+for i in range(C):
+    lst = list(map(int,input().split()))
+    avg = sum(lst[1:])/lst[0]
+    cnt = 0
+    for j in lst[1:]:
+        if j > avg:
+            cnt += 1
+    rate = cnt/lst[0]*100
+    print(f"{rate:.3f}%")
+ 
+# sum()함수를 이용해서 lst안에 있는 list값들을 다 더하면 바로 평균을 낼 수 있다.
